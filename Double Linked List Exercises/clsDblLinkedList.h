@@ -212,5 +212,17 @@ public:
         return current;
     }
 
+    bool GetItem(int index, type& outValue)
+    {
+        node* result = GetNode(index);
+
+        if (result == nullptr)
+            return false;
+
+        outValue = result->value;
+        return true;
+    }
+
+    
 
 };
