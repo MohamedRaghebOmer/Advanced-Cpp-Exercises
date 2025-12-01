@@ -3,5 +3,5 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="Double Linked List Exercises.vcxproj" />
+  <Project Path="Double Linked List Exercises.vcxproj" Id="2a2d42c4-2072-46e8-b052-fe98ea33ded9" />
 </Solution>
