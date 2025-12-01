@@ -5,20 +5,22 @@ using namespace std;
 int main()
 {
 
-    clsDblLinkedList <int> MydblLinkedList;
+    clsDblLinkedList <int> list;
 
-    MydblLinkedList.InsertAtBeginning(5);
-    MydblLinkedList.InsertAtBeginning(4);
-    MydblLinkedList.InsertAtBeginning(3);
-    MydblLinkedList.InsertAtBeginning(2);
-    MydblLinkedList.InsertAtBeginning(1);
+    list.InsertAtBeginning(5);
+    list.InsertAtBeginning(4);
+    list.InsertAtBeginning(3);
+    list.InsertAtBeginning(2);
+    list.InsertAtBeginning(1);
 
-    int value;
-    if (MydblLinkedList.GetItem(3, value))
-        cout << value; // prints: 4
+    list.PrintList();
+    if (list.UpdateItem(2, 300))
+        cout << "\nItem updated successfly.\n\n";
     else
-        cout << "Index out of range";
-
+        cout << "\nItem not found, or invalid value to update.\n\n";
+    
+    list.PrintList();
+    
     system("pause>0");
     return 0;
 }

@@ -223,6 +223,18 @@ public:
         return true;
     }
 
-    
+    bool UpdateItem(int index, type newValue)
+    {
+        if (index > _size - 1 || index < 0)
+            return false;
+
+        node* item = GetNode(index);
+        if (item == nullptr)
+            return false;
+
+        item->value = newValue;
+        return true;
+    }
+
 
 };
