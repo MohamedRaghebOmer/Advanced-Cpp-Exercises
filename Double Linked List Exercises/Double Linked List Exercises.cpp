@@ -13,9 +13,12 @@ int main()
     MydblLinkedList.InsertAtBeginning(2);
     MydblLinkedList.InsertAtBeginning(1);
 
-    clsDblLinkedList<int> ::node* n = MydblLinkedList.GetNode(2);
-    cout << "node in 2 = " << n->value << endl; // prints: 3
-                    
+    int value;
+    if (MydblLinkedList.GetItem(3, value))
+        cout << value; // prints: 4
+    else
+        cout << "Index out of range";
+
     system("pause>0");
     return 0;
 }
