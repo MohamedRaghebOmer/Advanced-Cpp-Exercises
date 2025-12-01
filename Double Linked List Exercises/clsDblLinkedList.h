@@ -16,11 +16,6 @@ public:
     };
     node* head = nullptr;
 
-    ~clsDblLinkedList()
-    {
-        Clear();
-    }
-
     void InsertAtBeginning(const type& value)
     {
         node* newNode = new node;
@@ -138,7 +133,7 @@ public:
             head->prev = nullptr;
         delete temp;
 
-        _size;
+        _size--;
     }
 
     void DeleteLastNode()
@@ -163,18 +158,6 @@ public:
         _size--;
     }
 
-    void Clear()
-    {
-        node* cur = head;
-        while (cur != nullptr)
-        {
-            node* next = cur->next;
-            delete cur;
-            cur = next;
-        }
-        head = nullptr;
-    }
-
     int size()
     {
         return _size;
@@ -183,6 +166,12 @@ public:
     bool isEmpty()
     {
         return _size == 0;
+    }
+
+    void clear()
+    {
+        while (_size > 0)
+            DeleteFirstNode();
     }
 
 

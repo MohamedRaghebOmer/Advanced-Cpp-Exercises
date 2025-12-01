@@ -16,7 +16,8 @@ int main()
     MydblLinkedList.InsertAtBeginning(1);
 
     cout << "size = " << MydblLinkedList.size() << endl;
-    cout << "is empty = " << MydblLinkedList.isEmpty() << endl;
+    MydblLinkedList.clear();
+    cout << "size after clear = " << MydblLinkedList.size() << endl;
 
     system("pause>0");
     return 0;
