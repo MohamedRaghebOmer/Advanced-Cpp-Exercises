@@ -4,6 +4,9 @@ using namespace std;
 
 template <class type> class clsDblLinkedList
 {
+protected:
+    int _size = 0;
+
 public:
     struct node
     {
@@ -29,6 +32,7 @@ public:
             head->prev = newNode;
 
         head = newNode;
+        _size++;
     }
 
     void PrintList()
@@ -71,6 +75,8 @@ public:
 
         if (newNode->next != nullptr)
             newNode->next->prev = newNode;
+
+        _size++;
     }
 
     void InsertAtEnd(const type& value)
@@ -92,6 +98,8 @@ public:
 
         newNode->prev = h;
         h->next = newNode;
+
+        _size++;
     }
 
     void DeleteNode(node* target)
@@ -115,6 +123,8 @@ public:
             target->next->prev = target->prev;
 
         delete target;
+        _size--;
+
     }
 
     void DeleteFirstNode()
@@ -127,6 +137,8 @@ public:
         if (head != nullptr)
             head->prev = nullptr;
         delete temp;
+
+        _size;
     }
 
     void DeleteLastNode()
@@ -147,6 +159,8 @@ public:
 
         h->prev->next = nullptr;
         delete h;
+
+        _size--;
     }
 
     void Clear()
@@ -159,6 +173,11 @@ public:
             cur = next;
         }
         head = nullptr;
+    }
+
+    int size()
+    {
+        return _size;
     }
 
 
