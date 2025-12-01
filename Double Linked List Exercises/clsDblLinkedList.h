@@ -180,5 +180,10 @@ public:
         return _size;
     }
 
+    bool isEmpty()
+    {
+        return _size == 0;
+    }
+
 
 };
