@@ -197,5 +197,20 @@ public:
 
     }
 
+    node* GetNode(int index)
+    {
+        if (index > _size -1 || index < 0 || head == nullptr)
+            return nullptr;
+
+        node* current = head;
+        while (index > 0 && current != nullptr)
+        {
+            current = current->next;
+            index--;
+        }
+
+        return current;
+    }
+
 
 };

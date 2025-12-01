@@ -13,12 +13,9 @@ int main()
     MydblLinkedList.InsertAtBeginning(2);
     MydblLinkedList.InsertAtBeginning(1);
 
-    cout << "before:" << endl;
-    MydblLinkedList.PrintList();
-    MydblLinkedList.reverse();
-    cout << "after:" << endl;
-    MydblLinkedList.PrintList();
-
+    clsDblLinkedList<int> ::node* n = MydblLinkedList.GetNode(2);
+    cout << "node in 2 = " << n->value << endl; // prints: 3
+                    
     system("pause>0");
     return 0;
 }
