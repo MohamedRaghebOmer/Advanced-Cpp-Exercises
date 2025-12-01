@@ -26,5 +26,8 @@
     <ClInclude Include="clsDblLinkedList.h">
       <Filter>Header Files\Data Stucture</Filter>
     </ClInclude>
+    <ClInclude Include="clsMyQueue.h">
+      <Filter>Header Files\Data Stucture</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
