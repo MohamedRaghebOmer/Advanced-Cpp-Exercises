@@ -14,8 +14,9 @@ int main()
     list.InsertAtBeginning(1);
 
     list.PrintList();
-    if (list.UpdateItem(2, 300))
-        cout << "\nItem updated successfly.\n\n";
+
+    if (list.InsertAfter(0, 300))
+        cout << "\nItem inserted successfly.\n\n";
     else
         cout << "\nItem not found, or invalid value to update.\n\n";
     

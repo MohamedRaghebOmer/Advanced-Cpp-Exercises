@@ -74,7 +74,7 @@ public:
         _size++;
     }
 
-    void InsertAtEnd(const type& value)
+    void InsertAtEnd(const const type& value)
     {
         node* newNode = new node;
         newNode->value = value;
@@ -223,7 +223,7 @@ public:
         return true;
     }
 
-    bool UpdateItem(int index, type newValue)
+    bool UpdateItem(int index, const type& newValue)
     {
         if (index > _size - 1 || index < 0)
             return false;
@@ -233,6 +233,15 @@ public:
             return false;
 
         item->value = newValue;
+        return true;
+    }
+
+    bool InsertAfter(int index, const type& value)
+    {
+        if (index > _size - 1 || index < 0)
+            return false;
+        
+        InsertAfter(GetNode(index), value);
         return true;
     }
 
