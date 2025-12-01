@@ -7,17 +7,17 @@ int main()
 
     clsDblLinkedList <int> MydblLinkedList;
 
-    MydblLinkedList.InsertAtBeginning(7);
-    MydblLinkedList.InsertAtBeginning(6);
     MydblLinkedList.InsertAtBeginning(5);
     MydblLinkedList.InsertAtBeginning(4);
     MydblLinkedList.InsertAtBeginning(3);
     MydblLinkedList.InsertAtBeginning(2);
     MydblLinkedList.InsertAtBeginning(1);
 
-    cout << "size = " << MydblLinkedList.size() << endl;
-    MydblLinkedList.clear();
-    cout << "size after clear = " << MydblLinkedList.size() << endl;
+    cout << "before:" << endl;
+    MydblLinkedList.PrintList();
+    MydblLinkedList.reverse();
+    cout << "after:" << endl;
+    MydblLinkedList.PrintList();
 
     system("pause>0");
     return 0;
