@@ -33,12 +33,18 @@ public:
     void PrintList()
     {
         node* h = head;
+        
+        cout << "nullptr <= ";
         while (h != nullptr)
         {
-            cout << h->value << "  ";
+            if(h->next != nullptr)
+                cout << h->value << " <=> ";
+            else
+                cout << h->value;
+
             h = h->next;
         }
-        cout << endl;
+        cout << " => nullptr";
     }
 
     node* find(const type& target)
@@ -212,15 +218,14 @@ public:
         return current;
     }
 
-    bool GetItem(int index, type& outValue)
+    type GetItem(int index)
     {
-        node* result = GetNode(index);
+         node* ItemNode = GetNode(index);
 
-        if (result == nullptr)
-            return false;
-
-        outValue = result->value;
-        return true;
+        if (ItemNode == nullptr)
+            return NULL;
+        else
+            return ItemNode->value;
     }
 
     bool UpdateItem(int index, const type& newValue)

@@ -1,27 +1,33 @@
 #include <iostream>
-#include "clsDblLinkedList.h"
+#include "clsMyQueue.h"
+
 using namespace std;
 
 int main()
 {
 
-    clsDblLinkedList <int> list;
+    clsMyQueue <int> MyQueue;
 
-    list.InsertAtBeginning(5);
-    list.InsertAtBeginning(4);
-    list.InsertAtBeginning(3);
-    list.InsertAtBeginning(2);
-    list.InsertAtBeginning(1);
+    MyQueue.push(10);
+    MyQueue.push(20);
+    MyQueue.push(30);
+    MyQueue.push(40);
+    MyQueue.push(50);
 
-    list.PrintList();
 
-    if (list.InsertAfter(0, 300))
-        cout << "\nItem inserted successfly.\n\n";
-    else
-        cout << "\nItem not found, or invalid value to update.\n\n";
-    
-    list.PrintList();
-    
+    cout << "\nQueue: \n";
+    MyQueue.print();
+
+    cout << "\nQueue Size: " << MyQueue.size();
+    cout << "\nQueue Front: " << MyQueue.front();
+    cout << "\nQueue Back: " << MyQueue.back();
+
+    MyQueue.pop();
+
+    cout << "\n\nQueue after pop() : \n";
+    MyQueue.print();
+
+
     system("pause>0");
     return 0;
 }
