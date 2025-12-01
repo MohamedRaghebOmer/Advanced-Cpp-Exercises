@@ -1,7 +1,165 @@
 #pragma once
+#include <iostream>
+using namespace std;
 
 template <class type> class clsDblLinkedList
 {
+public:
+    struct node
+    {
+        type value;
+        node* next = nullptr;
+        node* prev = nullptr;
+    };
+    node* head = nullptr;
+
+    ~clsDblLinkedList()
+    {
+        Clear();
+    }
+
+    void InsertAtBeginning(const type& value)
+    {
+        node* newNode = new node;
+        newNode->value = value;
+        newNode->next = head;
+        newNode->prev = nullptr;
+
+        if (head != nullptr)
+            head->prev = newNode;
+
+        head = newNode;
+    }
+
+    void PrintList()
+    {
+        node* h = head;
+        while (h != nullptr)
+        {
+            cout << h->value << "  ";
+            h = h->next;
+        }
+        cout << endl;
+    }
+
+    node* find(const type& target)
+    {
+        node* h = head;
+        while (h != nullptr)
+        {
+            if (h->value == target)
+                return h;
+            h = h->next;
+        }
+        return nullptr;
+    }
+
+    void InsertAfter(node* prevNode, const type& value)
+    {
+        if (prevNode == nullptr)
+        {
+            // insert at beginning if prevNode is null
+            InsertAtBeginning(value);
+            return;
+        }
+
+        node* newNode = new node;
+        newNode->value = value;
+        newNode->next = prevNode->next;
+        newNode->prev = prevNode;
+        prevNode->next = newNode;
+
+        if (newNode->next != nullptr)
+            newNode->next->prev = newNode;
+    }
+
+    void InsertAtEnd(const type& value)
+    {
+        node* newNode = new node;
+        newNode->value = value;
+        newNode->next = nullptr;
+        newNode->prev = nullptr;
+
+        if (head == nullptr)
+        {
+            head = newNode;
+            return;
+        }
+
+        node* h = head;
+        while (h->next != nullptr)
+            h = h->next;
+
+        newNode->prev = h;
+        h->next = newNode;
+    }
+
+    void DeleteNode(node* target)
+    {
+        if (head == nullptr || target == nullptr)
+            return;
+
+        if (target == head)
+        {
+            head = target->next;
+            if (head != nullptr)
+                head->prev = nullptr;
+            delete target;
+            return;
+        }
+
+        if (target->prev != nullptr)
+            target->prev->next = target->next;
+
+        if (target->next != nullptr)
+            target->next->prev = target->prev;
+
+        delete target;
+    }
+
+    void DeleteFirstNode()
+    {
+        if (head == nullptr)
+            return;
+
+        node* temp = head;
+        head = head->next;
+        if (head != nullptr)
+            head->prev = nullptr;
+        delete temp;
+    }
+
+    void DeleteLastNode()
+    {
+        if (head == nullptr)
+            return;
+
+        if (head->next == nullptr)
+        {
+            delete head;
+            head = nullptr;
+            return;
+        }
+
+        node* h = head;
+        while (h->next != nullptr)
+            h = h->next;
+
+        h->prev->next = nullptr;
+        delete h;
+    }
+
+    void Clear()
+    {
+        node* cur = head;
+        while (cur != nullptr)
+        {
+            node* next = cur->next;
+            delete cur;
+            cur = next;
+        }
+        head = nullptr;
+    }
+
 
 };
-
