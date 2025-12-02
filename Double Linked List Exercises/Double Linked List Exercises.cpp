@@ -19,9 +19,16 @@ int main()
     cout << "\nArray Items: \n";
     MyDynamicArray.print();
 
-    MyDynamicArray.DeleteItemAt(2);
-    cout << "\nArray Items after deleting item(2): \n";
+    MyDynamicArray.DeleteFirstItem();
+    cout << "\nArray Items after deleting FirstItem: \n";
+    cout << "\nArray Size: " << MyDynamicArray.size() << "\n";
     MyDynamicArray.print();
+
+    MyDynamicArray.DeleteLastItem();
+    cout << "\nArray Items after deleting LastItem: \n";
+    cout << "\nArray Size: " << MyDynamicArray.size() << "\n";
+    MyDynamicArray.print();
+
 
     system("pause>0");
     return 0;
