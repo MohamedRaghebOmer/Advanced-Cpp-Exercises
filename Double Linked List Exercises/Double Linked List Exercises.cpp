@@ -19,17 +19,9 @@ int main()
     cout << "\nArray Items: \n";
     MyDynamicArray.print();
 
-    cout << "\nItem(2): " << MyDynamicArray.GetItem(2) << "\n";
-
-    MyDynamicArray.reverse();
-    cout << "\nArray Items after reverse: \n";
+    MyDynamicArray.DeleteItemAt(2);
+    cout << "\nArray Items after deleting item(2): \n";
     MyDynamicArray.print();
-
-    MyDynamicArray.clear();
-
-    cout << "\nArray Items after clear: \n";
-    MyDynamicArray.print();
-
 
     system("pause>0");
     return 0;
