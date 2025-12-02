@@ -99,6 +99,9 @@ public:
         return _list.InsertAfter(prevNode, value);
     }
 
-
+    void InsertAtFront(const type& value)
+    {
+        _list.InsertAtBeginning(value);
+    }
 
 };
