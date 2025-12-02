@@ -138,5 +138,17 @@ public:
 
 		return true;
 	}
+
+	void DeleteFirstItem()
+	{
+		DeleteItemAt(0);
+	}
+
+	void DeleteLastItem()
+	{
+		DeleteItemAt(_size - 1);
+	}
+
+
 };
 
