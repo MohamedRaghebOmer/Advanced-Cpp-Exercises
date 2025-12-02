@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream>
+#include <stdexcept>
 using namespace std;
 
 template <class type> class clsDblLinkedList
@@ -16,6 +17,10 @@ public:
     };
     node* head = nullptr;
 
+    // constructor / destructor (optional but nice)
+    clsDblLinkedList() : _size(0), head(nullptr) {}
+    ~clsDblLinkedList() { clear(); }
+
     void InsertAtBeginning(const type& value)
     {
         node* newNode = new node;
@@ -30,24 +35,24 @@ public:
         _size++;
     }
 
-    void PrintList()
+    void PrintList() const
     {
         node* h = head;
-        
+
         cout << "nullptr <= ";
         while (h != nullptr)
         {
-            if(h->next != nullptr)
+            if (h->next != nullptr)
                 cout << h->value << " <=> ";
             else
                 cout << h->value;
 
             h = h->next;
         }
-        cout << " => nullptr";
+        cout << " => nullptr" << endl;
     }
 
-    node* find(const type& target)
+    node* find(const type& target) const
     {
         node* h = head;
         while (h != nullptr)
@@ -63,7 +68,6 @@ public:
     {
         if (prevNode == nullptr)
         {
-            // insert at beginning if prevNode is null
             InsertAtBeginning(value);
             return;
         }
@@ -80,7 +84,7 @@ public:
         _size++;
     }
 
-    void InsertAtEnd(const const type& value)
+    void InsertAtEnd(const type& value)
     {
         node* newNode = new node;
         newNode->value = value;
@@ -90,6 +94,7 @@ public:
         if (head == nullptr)
         {
             head = newNode;
+            _size++;
             return;
         }
 
@@ -114,6 +119,7 @@ public:
             if (head != nullptr)
                 head->prev = nullptr;
             delete target;
+            _size--;
             return;
         }
 
@@ -125,7 +131,6 @@ public:
 
         delete target;
         _size--;
-
     }
 
     void DeleteFirstNode()
@@ -151,6 +156,7 @@ public:
         {
             delete head;
             head = nullptr;
+            _size--;
             return;
         }
 
@@ -164,12 +170,12 @@ public:
         _size--;
     }
 
-    int size()
+    int size() const
     {
         return _size;
     }
 
-    bool isEmpty()
+    bool isEmpty() const
     {
         return _size == 0;
     }
@@ -198,14 +204,14 @@ public:
             current = current->prev;
         }
 
+        // set new head
         if (temp != nullptr)
             head = temp->prev;
-
     }
 
-    node* GetNode(int index)
+    node* GetNode(int index) const
     {
-        if (index > _size -1 || index < 0 || head == nullptr)
+        if (index < 0 || index >= _size || head == nullptr)
             return nullptr;
 
         node* current = head;
@@ -218,19 +224,30 @@ public:
         return current;
     }
 
-    type GetItem(int index)
+    type GetItem(int index) const
     {
-         node* ItemNode = GetNode(index);
+        node* ItemNode = GetNode(index);
 
         if (ItemNode == nullptr)
-            return NULL;
-        else
-            return ItemNode->value;
+            throw out_of_range("GetItem: index out of range");
+
+        return ItemNode->value;
+    }
+
+    bool GetItem(int index, type& outValue) const
+    {
+        node* ItemNode = GetNode(index);
+
+        if (ItemNode == nullptr)
+            return false;
+
+        outValue = ItemNode->value;
+        return true;
     }
 
     bool UpdateItem(int index, const type& newValue)
     {
-        if (index > _size - 1 || index < 0)
+        if (index < 0 || index >= _size)
             return false;
 
         node* item = GetNode(index);
@@ -243,10 +260,14 @@ public:
 
     bool InsertAfter(int index, const type& value)
     {
-        if (index > _size - 1 || index < 0)
+        if (index < 0 || index >= _size)
             return false;
-        
-        InsertAfter(GetNode(index), value);
+
+        node* n = GetNode(index);
+        if (n == nullptr)
+            return false;
+
+        InsertAfter(n, value);
         return true;
     }
 

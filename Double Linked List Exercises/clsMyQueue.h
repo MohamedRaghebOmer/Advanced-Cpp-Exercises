@@ -3,58 +3,86 @@
 #include "clsDblLinkedList.h"
 using namespace std;
 
-template <class type> class clsMyQueue
+template <class type>
+class clsMyQueue
 {
 protected:
-	clsDblLinkedList <type> _list;
+    clsDblLinkedList<type> _list;
 
 public:
-	void push(type value)
-	{
-		_list.InsertAtEnd(value);
-	}
 
-    void print()
+    void push(const type& value)
     {
-        typename clsDblLinkedList<type>::node* h = _list.head;
-
-        while (h != nullptr)
-        {
-            if (h->next != nullptr)
-                cout << h->value << " => ";
-            else
-                cout << h->value;
-
-            h = h->next;
-        }
-        cout << " => nullptr" << endl;
+        _list.InsertAtEnd(value);
     }
 
-    int size()
+    void print() const
+    {
+        typename clsDblLinkedList<type>::node* h = _list.head;
+        cout << "Front -> ";
+        while (h != nullptr)
+        {
+            cout << h->value;
+            if (h->next != nullptr) cout << " => ";
+            h = h->next;
+        }
+        cout << " -> nullptr" << endl;
+    }
+
+    int size() const
     {
         return _list.size();
     }
 
-    type front()
-    {
-        return _list.GetItem(0);
-    }
-
-    type back()
-    {
-        return _list.GetItem(size() - 1);
-    }
-
-    void pop()
-    {
-        _list.DeleteFirstNode();
-    }
-
-    bool IsEmpty()
+    bool IsEmpty() const
     {
         return size() == 0;
     }
 
+    type front() const
+    {
+        return _list.GetItem(0);
+    }
+
+    type back() const
+    {
+        return _list.GetItem(size() - 1);
+    }
+
+    type pop()
+    {
+        type value = front();
+        _list.DeleteFirstNode();
+        return value;
+    }
+
+    bool front(type& outValue) const
+    {
+        if (IsEmpty()) return false;
+        outValue = _list.GetItem(0);
+        return true;
+    }
+
+    bool back(type& outValue) const
+    {
+        if (IsEmpty()) return false;
+        outValue = _list.GetItem(size() - 1);
+        return true;
+    }
+
+    bool pop(type& outValue)
+    {
+        if (IsEmpty()) return false;
+
+        outValue = _list.GetItem(0);
+        _list.DeleteFirstNode();
+        return true;
+    }
+
+    type GetItem(int index) const
+    {
+        return _list.GetItem(index);
+    }
+
 
 };
-

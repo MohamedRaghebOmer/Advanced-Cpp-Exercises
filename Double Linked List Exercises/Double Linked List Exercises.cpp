@@ -15,7 +15,7 @@ int main()
     MyQueue.push(50);
 
 
-    cout << "\nQueue: \n";
+    cout << "\nQueue: ";
     MyQueue.print();
 
     cout << "\nQueue Size: " << MyQueue.size();
@@ -24,8 +24,14 @@ int main()
 
     MyQueue.pop();
 
-    cout << "\n\nQueue after pop() : \n";
+    cout << "\n\nQueue after pop(): ";
     MyQueue.print();
+
+
+    // Extinstion 1
+    cout << "\nItem at [3] = " << MyQueue.GetItem(3) << endl; // prints: 30
+
+    
 
 
     system("pause>0");
