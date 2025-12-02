@@ -1,47 +1,68 @@
+//ProgrammingAdvices.com
+//Mohammed Abu-Hadhoud
+
 #include <iostream>
-#include "clsMyDynamicArray.h"
+#include "clsMyQueueArr.h"
 
 using namespace std;
 
 int main()
 {
 
-    clsMyDynamicArray <int> MyDynamicArray(5);
+    clsMyQueueArr <int> MyQueue;
 
-    MyDynamicArray.SetItem(0, 10);
-    MyDynamicArray.SetItem(1, 20);
-    MyDynamicArray.SetItem(2, 30);
-    MyDynamicArray.SetItem(3, 40);
-    MyDynamicArray.SetItem(4, 50);
-
-    cout << "Is Empty?  " << MyDynamicArray.isEmpty();
-    cout << "\nArray Size: " << MyDynamicArray.size() << "\n";
-    cout << "\nArray Items: \n";
-    MyDynamicArray.print();
-
-    MyDynamicArray.InsertAtBeginning(400);
-    cout << "\n\nArray after insert 400 at Begining:";
-    cout << "\nArray Size: " << MyDynamicArray.size() << "\n";
-    MyDynamicArray.print();
-
-    MyDynamicArray.InsertBefore(2, 500);
-    cout << "\n\nArray after insert 500 before index 2:";
-    cout << "\nArray Size: " << MyDynamicArray.size() << "\n";
-    MyDynamicArray.print();
-
-    MyDynamicArray.InsertAfter(2, 600);
-    cout << "\n\nArray after insert 600 after index 2:";
-    cout << "\nArray Size: " << MyDynamicArray.size() << "\n";
-    MyDynamicArray.print();
+    MyQueue.push(10);
+    MyQueue.push(20);
+    MyQueue.push(30);
+    MyQueue.push(40);
+    MyQueue.push(50);
 
 
-    MyDynamicArray.print();
-    MyDynamicArray.InsertAtEnd(800);
-    cout << "\n\nArray after insert 800 at End:";
-    cout << "\nArray Size: " << MyDynamicArray.size() << "\n";
-    MyDynamicArray.print();
+    cout << "\nQueue: \n";
+    MyQueue.print();
+
+    cout << "\nQueue Size: " << MyQueue.size();
+    cout << "\nQueue Front: " << MyQueue.front();
+    cout << "\nQueue Back: " << MyQueue.back();
+
+    MyQueue.pop();
+
+    cout << "\n\nQueue after pop() : \n";
+    MyQueue.print();
 
 
+    cout << "\n\nItem(2) : " << MyQueue.GetItem(2);
+
+
+    MyQueue.reverse();
+    cout << "\n\nQueue after reverse() : \n";
+    MyQueue.print();
+
+
+    MyQueue.UpdateItem(2, 600);
+    cout << "\n\nQueue after updating Item(2) to 600 : \n";
+    MyQueue.print();
+
+
+    MyQueue.InsertAfter(2, 800);
+    cout << "\n\nQueue after Inserting 800 after Item(2) : \n";
+    MyQueue.print();
+
+
+
+    MyQueue.InsertAtFront(1000);
+    cout << "\n\nQueue after Inserting 1000 at front: \n";
+    MyQueue.print();
+
+
+    MyQueue.InsertAtBack(2000);
+    cout << "\n\nQueue after Inserting 2000 at back: \n";
+    MyQueue.print();
+
+
+    MyQueue.clear();
+    cout << "\n\nQueue after Clear(): \n";
+    MyQueue.print();
 
     system("pause>0");
     return 0;
