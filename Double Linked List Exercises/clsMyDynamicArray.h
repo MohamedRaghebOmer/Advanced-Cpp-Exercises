@@ -165,6 +165,27 @@ public:
 		return DeleteItemAt(find(value));
 	}
 
+	bool InsertAt(int index, const type& value)
+	{
+		if (index < 0 || index > _size) return false;
+
+		type* temp = new type[_size + 1];
+
+		for (int i = 0; i < index; i++)
+			temp[i] = _array[i];
+
+		temp[index] = value;
+
+		for (int i = index; i < _size; i++)
+			temp[i + 1] = _array[i];
+
+		delete[] _array;
+		_array = temp;
+		_size++;
+
+		return true;
+	}
+
 
 };
 
