@@ -78,6 +78,11 @@ int main()
     cout << "\nqu after inserting at back 2500 in the front: ";
     qu.print();
 
+    // Extinstion 7
+    qu.clear();
+    cout << "\nqu after claer: ";
+    qu.print();
+
     system("pause>0");
     return 0;
 }
