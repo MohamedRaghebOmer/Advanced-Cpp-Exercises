@@ -84,5 +84,10 @@ public:
         return _list.GetItem(index);
     }
 
+    bool reverse()
+    {
+        return _list.reverse();
+    }
+
 
 };

@@ -6,32 +6,37 @@ using namespace std;
 int main()
 {
 
-    clsMyQueue <int> MyQueue;
+    clsMyQueue <int> qu;
 
-    MyQueue.push(10);
-    MyQueue.push(20);
-    MyQueue.push(30);
-    MyQueue.push(40);
-    MyQueue.push(50);
+    qu.push(10);
+    qu.push(20);
+    qu.push(30);
+    qu.push(40);
+    qu.push(50);
 
 
     cout << "\nQueue: ";
-    MyQueue.print();
+    qu.print();
 
-    cout << "\nQueue Size: " << MyQueue.size();
-    cout << "\nQueue Front: " << MyQueue.front();
-    cout << "\nQueue Back: " << MyQueue.back();
+    cout << "\nQueue Size: " << qu.size();
+    cout << "\nQueue Front: " << qu.front();
+    cout << "\nQueue Back: " << qu.back();
 
-    MyQueue.pop();
+    qu.pop();
 
     cout << "\n\nQueue after pop(): ";
-    MyQueue.print();
+    qu.print();
 
 
     // Extinstion 1
-    cout << "\nItem at [3] = " << MyQueue.GetItem(3) << endl; // prints: 30
+    cout << "\nItem at [3] = " << qu.GetItem(3) << endl; // prints: 30
 
-    
+    // Extinstion 2
+    qu.reverse();
+    cout << "\nQueue after reversing: ";
+    qu.print();
+
+
 
 
     system("pause>0");
