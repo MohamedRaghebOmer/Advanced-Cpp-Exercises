@@ -56,6 +56,7 @@ int main()
         qu.print();
     }
 
+    // Extinstion 4
     if (qu.InsertAfter(2, 444))
     {
         cout << "\nqu after inserting 444 after node 2: ";
@@ -66,6 +67,11 @@ int main()
         cout << "\ninserting failed, ";
         qu.print();
     }
+
+    // Extinstion 5
+    qu.InsertAtFront(1000);
+    cout << "\nqu after inserting 1000 in the front: ";
+    qu.print();
 
 
 
