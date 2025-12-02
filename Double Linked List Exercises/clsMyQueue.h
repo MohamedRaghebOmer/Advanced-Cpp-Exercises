@@ -104,4 +104,10 @@ public:
         _list.InsertAtBeginning(value);
     }
 
+    void InsertAtBack(const type& value)
+    {
+        push(value);
+    }
+
+
 };

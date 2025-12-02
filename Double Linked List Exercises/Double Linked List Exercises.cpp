@@ -70,10 +70,13 @@ int main()
 
     // Extinstion 5
     qu.InsertAtFront(1000);
-    cout << "\nqu after inserting 1000 in the front: ";
+    cout << "\nqu after inserting at front 1000 in the front: ";
     qu.print();
 
-
+    // Extinstion 6
+    qu.InsertAtBack(2500);
+    cout << "\nqu after inserting at back 2500 in the front: ";
+    qu.print();
 
     system("pause>0");
     return 0;
