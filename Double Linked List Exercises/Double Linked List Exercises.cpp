@@ -19,16 +19,10 @@ int main()
     cout << "\nArray Items: \n";
     MyDynamicArray.print();
 
-    int Index = MyDynamicArray.find(30);
-    if (Index == -1)
-        cout << "\nItem was not Found :-(\n ";
-    else
-        cout << "\n30 is found at index : " << Index;
-
-    MyDynamicArray.DeleteItem(30);
-    cout << "\n\nArray Items after deleting 30:";
-    MyDynamicArray.print();
+    MyDynamicArray.InsertAt(2, 500);
+    cout << "\n\nArray after insert 500 at index 2:";
     cout << "\nArray Size: " << MyDynamicArray.size() << "\n";
+    MyDynamicArray.print();
 
 
     system("pause>0");
