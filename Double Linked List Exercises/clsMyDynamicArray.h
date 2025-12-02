@@ -56,6 +56,36 @@ public:
 		cout << endl;
 	}
 
+	bool resize(int newSize)
+	{
+		if (newSize == _size)
+			return true;
+
+		if (newSize <= 0)
+		{
+			delete[] _array;
+			_array = nullptr;
+			_size = 0;
+			return true;
+		}
+
+		if (newSize > _size)
+		{
+			_size = newSize;
+			return true;
+		}
+
+		type* tempArr = new type[newSize];
+		for (int i = 0; i < newSize; i++)
+			tempArr[i] = _array[i];
+
+		_size = newSize;
+		delete[] _array;
+		_array = tempArr;
+
+		return true;
+	}
+	
 
 };
 
