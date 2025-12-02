@@ -109,5 +109,10 @@ public:
         push(value);
     }
 
+    void clear()
+    {
+        _list.clear();
+    }
+
 
 };
