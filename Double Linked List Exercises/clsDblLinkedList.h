@@ -186,10 +186,10 @@ public:
             DeleteFirstNode();
     }
 
-    void reverse()
+    bool reverse()
     {
         if (head == nullptr)
-            return;
+            return false;
 
         node* current = head;
         node* temp = nullptr;
@@ -207,6 +207,8 @@ public:
         // set new head
         if (temp != nullptr)
             head = temp->prev;
+
+        return true;
     }
 
     node* GetNode(int index) const
