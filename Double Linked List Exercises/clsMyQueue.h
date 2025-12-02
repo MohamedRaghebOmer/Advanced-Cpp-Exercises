@@ -94,5 +94,11 @@ public:
         return _list.UpdateItem(indext, newValue);
     }
 
+    bool InsertAfter(int prevNode, const type& value)
+    {
+        return _list.InsertAfter(prevNode, value);
+    }
+
+
 
 };

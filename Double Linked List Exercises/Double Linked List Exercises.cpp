@@ -52,11 +52,20 @@ int main()
     }
     else
     {
-        cout << "\nUpdate falid";
+        cout << "\nUpdate falid, ";
         qu.print();
     }
 
-
+    if (qu.InsertAfter(2, 444))
+    {
+        cout << "\nqu after inserting 444 after node 2: ";
+        qu.print();
+    }
+    else
+    {
+        cout << "\ninserting failed, ";
+        qu.print();
+    }
 
     system("pause>0");
     return 0;
