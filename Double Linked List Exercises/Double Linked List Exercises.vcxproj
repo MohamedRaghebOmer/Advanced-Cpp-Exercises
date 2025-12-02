@@ -133,6 +133,7 @@
     <ClInclude Include="clsDblLinkedList.h" />
     <ClInclude Include="clsMyQueue.h" />
     <ClInclude Include="clsMyStack.h" />
+    <ClInclude Include="clsMyDynamicArray.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
