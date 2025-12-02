@@ -19,15 +19,16 @@ int main()
     cout << "\nArray Items: \n";
     MyDynamicArray.print();
 
-    MyDynamicArray.DeleteFirstItem();
-    cout << "\nArray Items after deleting FirstItem: \n";
-    cout << "\nArray Size: " << MyDynamicArray.size() << "\n";
-    MyDynamicArray.print();
+    int Index = MyDynamicArray.find(30);
+    if (Index == -1)
+        cout << "\nItem was not Found :-(\n ";
+    else
+        cout << "\n30 is found at index : " << Index;
 
-    MyDynamicArray.DeleteLastItem();
-    cout << "\nArray Items after deleting LastItem: \n";
-    cout << "\nArray Size: " << MyDynamicArray.size() << "\n";
+    MyDynamicArray.DeleteItem(30);
+    cout << "\n\nArray Items after deleting 30:";
     MyDynamicArray.print();
+    cout << "\nArray Size: " << MyDynamicArray.size() << "\n";
 
 
     system("pause>0");

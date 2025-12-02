@@ -149,6 +149,22 @@ public:
 		DeleteItemAt(_size - 1);
 	}
 
+	int find(const type& value)
+	{
+		for (int i = 0; i < _size; i++)
+		{
+			if (_array[i] == value)
+				return i;
+		}
+
+		return -1;
+	}
+
+	bool DeleteItem(const type& value)
+	{
+		return DeleteItemAt(find(value));
+	}
+
 
 };
 
