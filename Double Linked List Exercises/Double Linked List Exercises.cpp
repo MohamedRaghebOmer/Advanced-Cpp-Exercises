@@ -25,6 +25,10 @@ int main()
     cout << "\nArray Items after reverse: \n";
     MyDynamicArray.print();
 
+    MyDynamicArray.clear();
+
+    cout << "\nArray Items after clear: \n";
+    MyDynamicArray.print();
 
 
     system("pause>0");
