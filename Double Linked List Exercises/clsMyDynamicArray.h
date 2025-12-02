@@ -86,6 +86,29 @@ public:
 		return true;
 	}
 	
+	type GetItem(int index)
+	{
+		return _array[index];
+	}
+
+	void reverse()
+	{
+		if (_size <= 1) return;
+		if (!_array) return;
+
+		int i = 0, j = _size - 1;
+		
+		while (i < j)
+		{
+			type temp = _array[i];
+			_array[i] = _array[j];
+			_array[j] = temp;
+
+			i++;
+			j--;
+		}
+	}
+
 
 };
 
