@@ -89,5 +89,10 @@ public:
         return _list.reverse();
     }
 
+    bool UpdateItem(int indext, const type& newValue)
+    {
+        return _list.UpdateItem(indext, newValue);
+    }
+
 
 };
