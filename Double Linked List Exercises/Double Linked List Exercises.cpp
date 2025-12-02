@@ -23,19 +23,38 @@ int main()
     cout << "\nQueue Back: " << qu.back();
 
     qu.pop();
-
     cout << "\n\nQueue after pop(): ";
     qu.print();
 
 
     // Extinstion 1
-    cout << "\nItem at [3] = " << qu.GetItem(3) << endl; // prints: 30
+    cout << "\nItem at [3] = " << qu.GetItem(3) << endl; // prints: 50
+
 
     // Extinstion 2
-    qu.reverse();
-    cout << "\nQueue after reversing: ";
-    qu.print();
+    if(qu.reverse())
+    {
+        cout << "\nQueue after reversing: ";
+        qu.print();
+    }
+    else
+    {
+        cout << "\nreversing failed" << endl;
+        qu.print();
+    }
 
+
+    // Extinstion 3
+    if(qu.UpdateItem(2, 200))
+    {
+        cout << "\nMy qu after update item at [2] to 200 : ";
+        qu.print();
+    }
+    else
+    {
+        cout << "\nUpdate falid";
+        qu.print();
+    }
 
 
 
