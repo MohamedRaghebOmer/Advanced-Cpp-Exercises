@@ -56,29 +56,6 @@ public:
         return value;
     }
 
-    bool front(type& outValue) const
-    {
-        if (IsEmpty()) return false;
-        outValue = _list.GetItem(0);
-        return true;
-    }
-
-    bool back(type& outValue) const
-    {
-        if (IsEmpty()) return false;
-        outValue = _list.GetItem(size() - 1);
-        return true;
-    }
-
-    bool pop(type& outValue)
-    {
-        if (IsEmpty()) return false;
-
-        outValue = _list.GetItem(0);
-        _list.DeleteFirstNode();
-        return true;
-    }
-
     type GetItem(int index) const
     {
         return _list.GetItem(index);
@@ -106,7 +83,7 @@ public:
 
     void InsertAtBack(const type& value)
     {
-        push(value);
+        _list.InsertAtEnd(value);
     }
 
     void clear()
