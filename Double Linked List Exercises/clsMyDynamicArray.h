@@ -116,6 +116,27 @@ public:
 		_size = 0;
 	}
 
+	bool DeleteItemAt(int index)
+	{
+		if (index < 0 || index >= _size) return false;
 
+		type* temp = new type[_size - 1];
+		int j = 0;
+
+		for (int i = 0; i < _size; i++)
+		{
+			if (i != index)
+			{
+				temp[j] = _array[i];
+				j++;
+			}
+		}
+
+		delete[] _array;
+		_array = temp;
+		_size--;
+
+		return true;
+	}
 };
 
