@@ -67,6 +67,8 @@ int main()
         qu.print();
     }
 
+
+
     system("pause>0");
     return 0;
 }
