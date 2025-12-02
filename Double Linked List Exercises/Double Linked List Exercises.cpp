@@ -1,87 +1,64 @@
 #include <iostream>
-#include "clsMyQueue.h"
-
+#include "clsMyStack.h"
 using namespace std;
 
 int main()
 {
 
-    clsMyQueue <int> qu;
+    clsMyStack <int> MyStack;
 
-    qu.push(10);
-    qu.push(20);
-    qu.push(30);
-    qu.push(40);
-    qu.push(50);
-
-
-    cout << "\nQueue: ";
-    qu.print();
-
-    cout << "\nQueue Size: " << qu.size();
-    cout << "\nQueue Front: " << qu.front();
-    cout << "\nQueue Back: " << qu.back();
-
-    qu.pop();
-    cout << "\n\nQueue after pop(): ";
-    qu.print();
+    MyStack.push(10);
+    MyStack.push(20);
+    MyStack.push(30);
+    MyStack.push(40);
+    MyStack.push(50);
 
 
-    // Extinstion 1
-    cout << "\nItem at [3] = " << qu.GetItem(3) << endl; // prints: 50
+    cout << "\nStack: \n";
+    MyStack.print();
+
+    cout << "\nStack Size: " << MyStack.size();
+    cout << "\nStack Top: " << MyStack.top();
+    cout << "\nStack Bottom: " << MyStack.bottom();
+
+    MyStack.pop();
+
+    cout << "\n\nStack after pop() : \n";
+    MyStack.print();
+
+    //Extension #1
+    cout << "\n\n Item(2) : " << MyStack.GetItem(2);
+
+    //Extension #2
+    MyStack.reverse();
+    cout << "\n\nStack after reverse() : \n";
+    MyStack.print();
+
+    //Extension #3
+    MyStack.UpdateItem(2, 600);
+    cout << "\n\nStack after updating Item(2) to 600 : \n";
+    MyStack.print();
+
+    //Extension #4
+    MyStack.InsertAfter(2, 800);
+    cout << "\n\nStack after Inserting 800 after Item(2) : \n";
+    MyStack.print();
 
 
-    // Extinstion 2
-    if(qu.reverse())
-    {
-        cout << "\nQueue after reversing: ";
-        qu.print();
-    }
-    else
-    {
-        cout << "\nreversing failed" << endl;
-        qu.print();
-    }
+    //Extension #5
+    MyStack.InsertAtFront(1000);
+    cout << "\n\nStack after Inserting 1000 at top: \n";
+    MyStack.print();
 
+    //Extension #6
+    MyStack.InsertAtBack(2000);
+    cout << "\n\nStack after Inserting 2000 at bottom: \n";
+    MyStack.print();
 
-    // Extinstion 3
-    if(qu.UpdateItem(2, 200))
-    {
-        cout << "\nMy qu after update item at [2] to 200 : ";
-        qu.print();
-    }
-    else
-    {
-        cout << "\nUpdate falid, ";
-        qu.print();
-    }
-
-    // Extinstion 4
-    if (qu.InsertAfter(2, 444))
-    {
-        cout << "\nqu after inserting 444 after node 2: ";
-        qu.print();
-    }
-    else
-    {
-        cout << "\ninserting failed, ";
-        qu.print();
-    }
-
-    // Extinstion 5
-    qu.InsertAtFront(1000);
-    cout << "\nqu after inserting at front 1000 in the front: ";
-    qu.print();
-
-    // Extinstion 6
-    qu.InsertAtBack(2500);
-    cout << "\nqu after inserting at back 2500 in the front: ";
-    qu.print();
-
-    // Extinstion 7
-    qu.clear();
-    cout << "\nqu after claer: ";
-    qu.print();
+    //Extension #7
+    MyStack.clear();
+    cout << "\n\nStack after Clear(): \n";
+    MyStack.print();
 
     system("pause>0");
     return 0;

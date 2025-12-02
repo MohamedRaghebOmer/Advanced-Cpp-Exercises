@@ -17,7 +17,6 @@ public:
     };
     node* head = nullptr;
 
-    // constructor / destructor (optional but nice)
     clsDblLinkedList() : _size(0), head(nullptr) {}
     ~clsDblLinkedList() { clear(); }
 
