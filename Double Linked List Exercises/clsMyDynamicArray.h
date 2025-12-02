@@ -109,6 +109,13 @@ public:
 		}
 	}
 
+	void clear()
+	{
+		delete[] _array;
+		_array = nullptr;
+		_size = 0;
+	}
+
 
 };
 
