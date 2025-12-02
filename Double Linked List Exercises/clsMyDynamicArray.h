@@ -186,6 +186,32 @@ public:
 		return true;
 	}
 
+	void InsertAtBeginning(const type& value)
+	{
+		InsertAt(0, value);
+	}
+	
+	bool InsertBefore(int index, const type& value)
+	{
+		if (index < 1)
+			return InsertAt(0, value);
+		else
+			InsertAt(index - 1, value);
+	}
+
+	bool InsertAfter(int index, const type& value)
+	{
+		if (index >= _size)
+			return InsertAt(_size - 1, value);
+		else
+			InsertAt(index + 1, value);
+	}
+
+	bool InsertAtEnd(const type& value)
+	{
+		return InsertAt(_size, value);
+	}
+
 
 };
 
