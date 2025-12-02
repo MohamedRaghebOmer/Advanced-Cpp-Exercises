@@ -130,11 +130,16 @@
     <ClCompile Include="Double Linked List Exercises.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="clsDate.h" />
     <ClInclude Include="clsDblLinkedList.h" />
     <ClInclude Include="clsMyQueue.h" />
     <ClInclude Include="clsMyQueueArr.h" />
     <ClInclude Include="clsMyStack.h" />
     <ClInclude Include="clsMyDynamicArray.h" />
+    <ClInclude Include="clsMyStackArr.h" />
+    <ClInclude Include="clsQueueLine.h" />
+    <ClInclude Include="clsString.h" />
+    <ClInclude Include="clsUndoAndRedo.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
