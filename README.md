@@ -1,13 +1,10 @@
-# 🚀 Advanced C++: Custom Data Structures & Engineering Logic
+# 🚀 Advanced C++: Custom Data Structures & Technical Logic
 
-This repository marks a transition from basic Object-Oriented Programming (OOP) to **low-level Software Engineering**. It contains a hand-crafted library of fundamental Data Structures, implemented from scratch in C++, with a focus on memory efficiency, template metaprogramming, and algorithmic optimization.
-
-> **Level:** Advanced (Post-OOP)  
-> **Curriculum:** Part of the "Level 13: Algorithms & Data Structures" by Dr. Mohammed Abu-Hadhoud.
+This repository marks a transition from basic Object-Oriented Programming (OOP) to **low-level Software Engineering**. It contains a hand-crafted library of fundamental Data Structures, implemented from scratch in C++, with a strong focus on memory efficiency, template-based design, and algorithmic optimization.
 
 ---
 
-## 💎 Engineering Highlights
+## 💎 Technical Highlights
 
 What makes this repository "Advanced"?
 * **Template-Based Design:** Every structure is generic, supporting any data type through C++ Templates.
@@ -80,3 +77,4 @@ The project is organized to be used as a header-only library for easy integratio
 ```
 ---
 
+This project is designed as a learning-focused engineering exercise and a reusable reference for core data structure implementations in C++.
